@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>@Kaguya</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Kaguya</a>
+        <nav>
+            <a href="#" class="active"> Accueil</a>
+            <a href="comp.html">Compétences</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="asa.jpg" alt="Kaguya Dev">
+        </div>
+        <div class="home-content">
+            <h1>Hey ! c'est <span>Kaguya</span></h1>
+            <h3 class="typing-text">Je suis un <span></span></h3>
+            <p>Depuis l'âge de 9 ans, j'ai toujours été fasciné par le monde de l'informatique. Mon premier ordinateur, un vieux modèle, est devenu ma porte d'entrée vers un univers plein de possibilités. Je passais des heures à explorer des jeux, à déchiffrer des codes et à créer mes propres projets simples. Au fil des années, cette passion n'a fait que grandir.</p>
+            <div class="social-icons">
+                <a href="https://github.com/xwqo"><i class="fa-brands fa-github"></i></a>
+                <a href="https://discord.gg/78MXfpcy"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://miwa.lol/user"><i class="fa-solid fa-link"></i></a>
+            </div>
+            <a href="https://discord.gg/78MXfpcy" class="btn">Parle avec moi</a>
+        </div>
+    </section>
+    <script>
+        const titleText = '@Kaguya';
+        let index = 0;
+        let forward = true;
+        let currentTitle = '';
+        function typeTitle() {
+            if (forward) {
+                if (index < titleText.length) {
+                    currentTitle += titleText.charAt(index);
+                    document.title = currentTitle;
+                    index++;
+                } else {
+                    forward = false;
+                }
+            } else {
+                if (index > 0) {
+                    currentTitle = currentTitle.slice(0, -1);
+                    document.title = currentTitle;
+                    index--;
+                } else {
+                    forward = true;
+                }
+            }
+            setTimeout(typeTitle, 200);
+        }
+        typeTitle();
+    </script>
+</body>
+
+</html>
